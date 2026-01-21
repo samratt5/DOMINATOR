@@ -3,32 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOMINATOR v3.0 - SAMRAT'S BLACK HAT YOUTUBE WARFARE PLATFORM</title>
+    <title>DOMINATOR v4.0 - SAMRAT'S BLACK HAT YOUTUBE WARFARE PLATFORM</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     
-    <!-- Custom Modern Malicious CSS -->
+    <!-- Custom Modern Dark Theme CSS -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto+Mono:wght@400;700&family=Inter:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
         
         * {
             box-sizing: border-box;
         }
         
         body {
-            background: linear-gradient(135deg, #0a0a0a 0%, #000000 100%);
-            color: #ff0040;
-            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0c0c0c 0%, #0a0a0a 50%, #080808 100%);
+            color: #ff2a6d;
+            font-family: 'Rajdhani', sans-serif;
             overflow-x: hidden;
             position: relative;
             min-height: 100vh;
-            line-height: 1.6;
+            font-weight: 500;
         }
         
-        /* Subtle animated background */
-        body::after {
+        body::before {
             content: "";
             position: fixed;
             top: 0;
@@ -36,216 +35,225 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 10% 20%, rgba(255, 0, 64, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(255, 0, 64, 0.05) 0%, transparent 20%);
+                radial-gradient(circle at 20% 30%, rgba(255, 42, 109, 0.04) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 42, 109, 0.04) 0%, transparent 30%);
             pointer-events: none;
             z-index: -1;
-            animation: pulse-bg 15s infinite alternate;
-        }
-        
-        @keyframes pulse-bg {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.6; }
         }
         
         .malicious-glow {
-            text-shadow: 0 0 15px #ff0040, 0 0 30px #ff0040, 0 0 45px #ff0040;
-            animation: flicker 3s infinite alternate;
+            text-shadow: 0 0 15px #ff2a6d, 0 0 30px #ff2a6d, 0 0 45px #ff2a6d;
+            animation: flicker 4s infinite alternate;
         }
         
         @keyframes flicker {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.85; }
+            0%, 100% { opacity: 0.95; }
+            50% { opacity: 0.8; }
         }
         
         .danger-border {
-            border: 2px solid #ff0040;
-            box-shadow: 
-                0 0 20px rgba(255, 0, 64, 0.4),
-                inset 0 0 15px rgba(255, 0, 64, 0.1);
-            clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
-            border-radius: 2px;
+            border: 1px solid #ff2a6d;
+            box-shadow: 0 0 25px rgba(255, 42, 109, 0.3);
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .danger-border::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff2a6d, #ff2060, #ff2a6d);
+            z-index: -1;
+            border-radius: 10px;
+            animation: border-glow 3s linear infinite;
+        }
+        
+        @keyframes border-glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
         }
         
         .hacker-bg {
-            background: rgba(10, 10, 10, 0.6);
-            border: 1px solid rgba(255, 0, 64, 0.3);
-            box-shadow: inset 0 0 10px rgba(255, 0, 64, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 4px;
+            background: rgba(15, 15, 15, 0.5);
+            border: 1px solid rgba(255, 42, 109, 0.25);
+            box-shadow: inset 0 0 10px rgba(255, 42, 109, 0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 6px;
         }
         
         .threat-text {
-            font-family: 'Orbitron', monospace;
-            font-weight: 900;
-            letter-spacing: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
         
         .btn-malicious {
-            background: linear-gradient(135deg, #ff0040 0%, #cc0033 100%);
+            background: linear-gradient(135deg, #ff2a6d 0%, #d1004d 100%);
             color: #fff;
             border: none;
             text-transform: uppercase;
             font-weight: 700;
             letter-spacing: 1.5px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            clip-path: polygon(12px 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
-            padding: 12px 24px;
+            padding: 10px 20px;
             font-size: 0.9rem;
             position: relative;
             overflow: hidden;
-        }
-        
-        .btn-malicious::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn-malicious:hover::before {
-            left: 100%;
+            border-radius: 6px;
+            box-shadow: 0 4px 15px rgba(255, 42, 109, 0.3);
         }
         
         .btn-malicious:hover {
-            background: linear-gradient(135deg, #ff2060 0%, #dd0044 100%);
-            box-shadow: 0 0 25px rgba(255, 0, 64, 0.7);
+            background: linear-gradient(135deg, #ff4a8d 0%, #e1005d 100%);
+            box-shadow: 0 6px 20px rgba(255, 42, 109, 0.5);
             transform: translateY(-2px);
         }
         
         .btn-malicious:active {
             transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(255, 42, 109, 0.4);
         }
         
         .btn-malicious:disabled {
-            background: #660022;
+            background: linear-gradient(135deg, #662a4d 0%, #441a3d 100%);
             color: #999;
             cursor: not-allowed;
             box-shadow: none;
         }
         
         .warning-pulse {
-            animation: pulse-red 2s infinite;
+            animation: pulse-red 2.5s infinite;
         }
         
         @keyframes pulse-red {
             0%, 100% { 
-                color: #ff0040; 
-                text-shadow: 0 0 5px #ff0040;
+                color: #ff2a6d; 
+                text-shadow: 0 0 5px #ff2a6d;
             }
             50% { 
                 color: #ff80a0; 
-                text-shadow: 0 0 15px #ff0040;
+                text-shadow: 0 0 15px #ff2a6d;
             }
         }
         
         .card-malicious {
-            background: rgba(10, 10, 10, 0.4);
-            border: 1px solid rgba(255, 0, 64, 0.4);
-            box-shadow: 0 0 20px rgba(255, 0, 64, 0.2);
+            background: rgba(15, 15, 15, 0.4);
+            border: 1px solid rgba(255, 42, 109, 0.3);
+            box-shadow: 0 0 20px rgba(255, 42, 109, 0.15);
             backdrop-filter: blur(10px);
-            border-radius: 8px;
-            transition: all 0.3s;
+            border-radius: 12px;
+            transition: all 0.4s;
+            overflow: hidden;
         }
         
         .card-malicious:hover {
-            box-shadow: 0 0 30px rgba(255, 0, 64, 0.4);
-            border-color: rgba(255, 0, 64, 0.7);
+            box-shadow: 0 0 35px rgba(255, 42, 109, 0.3);
+            border-color: rgba(255, 42, 109, 0.6);
+            transform: translateY(-3px);
         }
         
         .form-control-malicious {
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(10, 10, 10, 0.7);
             color: #ff80a0;
-            border: 1px solid rgba(255, 0, 64, 0.5);
-            border-radius: 4px;
-            font-family: 'Roboto Mono', monospace;
-            padding: 12px;
+            border: 1px solid rgba(255, 42, 109, 0.4);
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 12px 16px;
             font-size: 0.95rem;
             transition: all 0.3s;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
         }
         
         .form-control-malicious:focus {
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(15, 15, 15, 0.8);
             color: #ff80a0;
-            border-color: #ff0040;
-            box-shadow: 0 0 15px rgba(255, 0, 64, 0.3);
+            border-color: #ff2a6d;
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.3), inset 0 0 10px rgba(0, 0, 0, 0.5);
             outline: none;
         }
         
         .form-control-malicious::placeholder {
-            color: rgba(255, 0, 64, 0.5);
+            color: rgba(255, 42, 109, 0.6);
         }
         
-        .text-malicious-red { color: #ff0040; }
-        .text-malicious-yellow { color: #ffff20; }
-        .text-malicious-green { color: #00ff80; }
-        .text-malicious-cyan { color: #00ffff; }
+        .text-malicious-red { color: #ff2a6d; }
+        .text-malicious-yellow { color: #ffd000; }
+        .text-malicious-green { color: #00ff9d; }
+        .text-malicious-cyan { color: #00f0ff; }
         .text-malicious-purple { color: #ff00ff; }
-        .text-visible { color: #ff80a0 !important; } /* High visibility text */
+        .text-malicious-orange { color: #ff9500; }
+        .text-visible { color: #ffb3c0 !important; font-weight: 500; }
+        .text-high-contrast { color: #ffffff !important; font-weight: 600; }
         
-        .bi-biohazard { font-size: 2.2rem; filter: drop-shadow(0 0 8px #ffff20); }
-        .bi-shield-check { font-size: 1.5rem; filter: drop-shadow(0 0 5px #00ff80); }
-        .bi-terminal { font-size: 1.5rem; filter: drop-shadow(0 0 5px #ff0040); }
-        .bi-person-circle { font-size: 1.4rem; filter: drop-shadow(0 0 5px #00ffff); }
+        .bi-biohazard { font-size: 2.2rem; filter: drop-shadow(0 0 8px #ffd000); }
+        .bi-shield-check { font-size: 1.5rem; filter: drop-shadow(0 0 5px #00ff9d); }
+        .bi-terminal { font-size: 1.5rem; filter: drop-shadow(0 0 5px #ff2a6d); }
+        .bi-person-circle { font-size: 1.4rem; filter: drop-shadow(0 0 5px #00f0ff); }
         
         .debug-log {
-            background: rgba(0, 0, 0, 0.7);
-            color: #00ff80;
-            font-family: 'Roboto Mono', monospace;
+            background: rgba(0, 0, 0, 0.6);
+            color: #00ff9d;
+            font-family: 'JetBrains Mono', monospace;
             font-size: 0.8rem;
             max-height: 220px;
             overflow-y: auto;
-            border: 1px solid rgba(0, 255, 128, 0.3);
-            box-shadow: inset 0 0 10px rgba(0, 255, 128, 0.1);
-            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            box-shadow: inset 0 0 10px rgba(0, 255, 157, 0.1);
+            border-radius: 6px;
         }
         
         .spinner-danger {
-            border-color: #ff0040;
+            border-color: #ff2a6d;
             border-top-color: transparent;
             width: 3rem;
             height: 3rem;
         }
         
         .badge-threat {
-            background: linear-gradient(135deg, #ff0040 0%, #cc0033 100%);
+            background: linear-gradient(135deg, #ff2a6d 0%, #d1004d 100%);
             color: #fff;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.7rem;
             padding: 6px 12px;
+            border-radius: 20px;
         }
         
         .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #ff0040, transparent);
-            margin: 2rem 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff2a6d, transparent);
+            margin: 2.5rem 0;
             border: none;
         }
         
         .control-panel {
-            background: linear-gradient(180deg, rgba(10, 10, 10, 0.6), rgba(0, 0, 0, 0.8));
-            border: 1px solid rgba(255, 0, 64, 0.4);
-            box-shadow: 0 0 20px rgba(255, 0, 64, 0.2);
-            backdrop-filter: blur(5px);
-            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(20, 20, 20, 0.6), rgba(10, 10, 10, 0.8));
+            border: 1px solid rgba(255, 42, 109, 0.3);
+            box-shadow: 0 0 20px rgba(255, 42, 109, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
         }
         
         .feature-highlight {
-            border-left: 4px solid #ff0040;
-            padding-left: 1rem;
-            margin: 0.5rem 0;
+            border-left: 3px solid #ff2a6d;
+            padding-left: 0.75rem;
+            margin: 0.25rem 0;
+            transition: all 0.3s;
         }
         
-        /* Modern scrollbars */
+        .feature-highlight:hover {
+            border-left-color: #ff80a0;
+            background: rgba(255, 42, 109, 0.05);
+        }
+        
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -256,29 +264,29 @@
         }
         
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #ff0040 0%, #cc0033 100%);
+            background: linear-gradient(135deg, #ff2a6d 0%, #d1004d 100%);
             border-radius: 4px;
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #ff2060 0%, #dd0044 100%);
+            background: linear-gradient(135deg, #ff4a8d 0%, #e1005d 100%);
         }
         
-        /* Responsive improvements */
         @media (max-width: 768px) {
             .threat-text { font-size: 1.5rem; }
             .display-1 { font-size: 3rem; }
-            .btn-malicious { font-size: 0.8rem; padding: 10px 20px; }
+            .btn-malicious { font-size: 0.8rem; padding: 8px 16px; }
+            .control-panel { padding: 1rem; }
         }
     </style>
 </head>
 <body>
     
     <!-- SAMRAT'S OWNERSHIP SIGNATURE -->
-    <div class="samrat-signature">
+    <div style="position: fixed; bottom: 10px; right: 10px; background: rgba(255, 42, 109, 0.1); border: 1px solid #ff2a6d; padding: 8px 12px; font-size: 0.75rem; z-index: 9999; border-radius: 6px;">
         <i class="bi bi-github"></i> <span class="text-malicious-yellow">@Samrat</span> | 
         <i class="bi bi-instagram"></i> <span class="text-malicious-yellow">instagram.com/samrat_cs2</span> | 
-        <span class="text-malicious-cyan">BLACK HAT DOMINATOR v3.0</span>
+        <span class="text-malicious-cyan">DOMINATOR v4.0</span>
     </div>
     
     <!-- HARDCODED API KEYS -->
@@ -287,15 +295,15 @@
         const GEMINI_API_KEY = "AIzaSyCYnvcCUNvzePhWsLgp1E6xaHSKqrZ4_Fk";
         const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${GEMINI_API_KEY}`;
         
-        console.log("Backend credentials loaded | DOMINATOR v3.0 by @Samrat");
+        console.log("Backend credentials loaded | DOMINATOR v4.0 by @Samrat");
     </script>
 
     <div class="container-fluid px-4 py-5">
         
-        <!-- HEADER: TACTICAL WARFARE DISPLAY -->
+        <!-- HEADER -->
         <header class="text-center mb-5 p-4 danger-border">
             <h1 class="threat-text display-1 text-malicious-yellow mb-3 text-uppercase">
-                DOMINATOR <span class="text-white">v3.0</span>
+                DOMINATOR <span class="text-white">v4.0</span>
             </h1>
             <p class="lead text-malicious-yellow fw-bold text-uppercase">
                 SAMRAT'S BLACK HAT YOUTUBE SEO WARFARE PLATFORM<br>
@@ -324,6 +332,7 @@
                 <i class="bi bi-radioactive"></i> Nuclear Aggression Protocols
             </h3>
             <div class="row row-cols-1 row-cols-md-3 g-3">
+                <!-- Original 6 protocols -->
                 <div class="col feature-highlight">
                     <label class="d-flex align-items-center gap-2 p-2 hacker-bg">
                         <input type="checkbox" id="nukeCompetitorHijack" checked class="form-check-input border-danger">
@@ -358,6 +367,44 @@
                     <label class="d-flex align-items-center gap-2 p-2 hacker-bg">
                         <input type="checkbox" id="nukeViewVelocity" checked class="form-check-input border-danger">
                         <span class="fw-semibold small text-visible">Velocity Trigger</span>
+                    </label>
+                </div>
+                
+                <!-- NEW: 6 Additional Blackhat Features by @Samrat -->
+                <div class="col feature-highlight">
+                    <label class="d-flex align-items-center gap-2 p-2 hacker-bg">
+                        <input type="checkbox" id="nukeViewBotTrigger" checked class="form-check-input border-danger">
+                        <span class="fw-semibold small text-malicious-orange">View Bot Trigger Keywords</span>
+                    </label>
+                </div>
+                <div class="col feature-highlight">
+                    <label class="d-flex align-items-center gap-2 p-2 hacker-bg">
+                        <input type="checkbox" id="nukeMassFlagTargets" class="form-check-input border-danger">
+                        <span class="fw-semibold small text-malicious-purple">Mass Flagging Targets</span>
+                    </label>
+                </div>
+                <div class="col feature-highlight">
+                    <label class="d-flex align-items-center gap-2 p-2 hacker-bg">
+                        <input type="checkbox" id="nukeAgeRestrictionBypass" checked class="form-check-input border-danger">
+                        <span class="fw-semibold small text-malicious-cyan">Age Restriction Bypass</span>
+                    </label>
+                </div>
+                <div class="col feature-highlight">
+                    <label class="d-flex align-items-center gap-2 p-2 hacker-bg">
+                        <input type="checkbox" id="nukeMonetizationClickbait" checked class="form-check-input border-danger">
+                        <span class="fw-semibold small text-malicious-yellow">Monetization Clickbait</span>
+                    </label>
+                </div>
+                <div class="col feature-highlight">
+                    <label class="d-flex align-items-center gap-2 p-2 hacker-bg">
+                        <input type="checkbox" id="nukeCycleUploadStrategy" checked class="form-check-input border-danger">
+                        <span class="fw-semibold small text-malicious-green">Cycle Upload Strategy</span>
+                    </label>
+                </div>
+                <div class="col feature-highlight">
+                    <label class="d-flex align-items-center gap-2 p-2 hacker-bg">
+                        <input type="checkbox" id="nukeKeywordCannibalism" class="form-check-input border-danger">
+                        <span class="fw-semibold small text-malicious-red">Keyword Cannibalism Attack</span>
                     </label>
                 </div>
             </div>
@@ -412,83 +459,45 @@
         <!-- RESULTS SECTION -->
         <div id="results" class="d-none">
             
-            <!-- THUMBNAIL ARSENAL -->
+            <!-- THUMBNAIL ARSENAL - PROMPT ONLY -->
             <div class="card-malicious p-4 mb-4">
                 <h2 class="h4 text-malicious-yellow threat-text mb-4 text-uppercase">
-                    <i class="bi bi-image"></i> AI Thumbnail Arsenal
+                    <i class="bi bi-image"></i> AI Thumbnail Arsenal (Prompts Only)
                 </h2>
                 
                 <div class="row g-4">
-                    <!-- THUMBNAIL V1 -->
+                    <!-- THUMBNAIL PROMPT V1 -->
                     <div class="col-md-6">
                         <div class="hacker-bg p-3 h-100">
                             <h3 class="h6 text-malicious-red mb-3">
-                                <i class="bi bi-image-fill"></i> PRIMARY VIRAL THUMBNAIL
+                                <i class="bi bi-image-fill"></i> PRIMARY VIRAL PROMPT
                             </h3>
-                            
-                            <button id="generateBtnV1" onclick="handleGenerateThumbnail('thumbnailPromptV1Text', 'thumbnailImageV1', 'thumbnailLoadingV1', 'thumbnailErrorV1', 'thumbnailStatusV1')" 
-                                    class="btn btn-malicious w-100 mb-3">
-                                <i class="bi bi-magic"></i> Generate Thumbnail V1
-                            </button>
-                            
-                            <div id="thumbnailStatusV1" class="text-malicious-yellow small text-center mb-2 d-none"></div>
-                            
-                            <div class="bg-black p-3 border border-danger d-flex align-items-center justify-content-center" style="min-height: 200px;">
-                                <img id="thumbnailImageV1" class="img-fluid d-none" alt="Generated Thumbnail V1">
-                                <div id="thumbnailLoadingV1" class="text-center d-none">
-                                    <div class="spinner-border spinner-danger"></div>
-                                    <p class="text-malicious-yellow small mt-2">AI is cooking your thumbnail...</p>
-                                </div>
-                                <div id="thumbnailErrorV1" class="text-danger small text-center d-none"></div>
-                            </div>
-                            
-                            <div class="mt-3 hacker-bg p-2">
-                                <small class="text-muted d-block">PROMPT USED:</small>
-                                <div id="thumbnailPromptV1Text" class="text-malicious-yellow small" style="max-height: 100px; overflow-y: auto;">
+                            <div class="hacker-bg p-3 border border-danger mb-3">
+                                <div id="thumbnailPromptV1Text" class="text-malicious-yellow small" style="max-height: 150px; overflow-y: auto;">
                                     Prompt will appear here after analysis...
                                 </div>
                             </div>
-                            
-                            <div class="d-flex gap-2 mt-3">
+                            <div class="d-flex gap-2">
                                 <button onclick="copyText('thumbnailPromptV1Text')" class="btn btn-sm btn-dark flex-fill">Copy Prompt</button>
-                                <button onclick="downloadThumbnail('thumbnailImageV1')" class="btn btn-sm btn-success flex-fill">Download</button>
+                                <button onclick="alert('Image generation removed in v4.0. Use prompts with external tools.')" class="btn btn-sm btn-secondary flex-fill">Generator Removed</button>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- THUMBNAIL V2 -->
+                    <!-- THUMBNAIL PROMPT V2 -->
                     <div class="col-md-6">
                         <div class="hacker-bg p-3 h-100">
                             <h3 class="h6 text-malicious-red mb-3">
-                                <i class="bi bi-image-fill"></i> ALTERNATIVE ANGLE THUMBNAIL
+                                <i class="bi bi-image-fill"></i> ALTERNATIVE ANGLE PROMPT
                             </h3>
-                            
-                            <button id="generateBtnV2" onclick="handleGenerateThumbnail('thumbnailPromptV2Text', 'thumbnailImageV2', 'thumbnailLoadingV2', 'thumbnailErrorV2', 'thumbnailStatusV2')" 
-                                    class="btn btn-malicious w-100 mb-3">
-                                <i class="bi bi-magic"></i> Generate Thumbnail V2
-                            </button>
-                            
-                            <div id="thumbnailStatusV2" class="text-malicious-yellow small text-center mb-2 d-none"></div>
-                            
-                            <div class="bg-black p-3 border border-danger d-flex align-items-center justify-content-center" style="min-height: 200px;">
-                                <img id="thumbnailImageV2" class="img-fluid d-none" alt="Generated Thumbnail V2">
-                                <div id="thumbnailLoadingV2" class="text-center d-none">
-                                    <div class="spinner-border spinner-danger"></div>
-                                    <p class="text-malicious-yellow small mt-2">AI is cooking your thumbnail...</p>
-                                </div>
-                                <div id="thumbnailErrorV2" class="text-danger small text-center d-none"></div>
-                            </div>
-                            
-                            <div class="mt-3 hacker-bg p-2">
-                                <small class="text-muted d-block">PROMPT USED:</small>
-                                <div id="thumbnailPromptV2Text" class="text-malicious-yellow small" style="max-height: 100px; overflow-y: auto;">
+                            <div class="hacker-bg p-3 border border-danger mb-3">
+                                <div id="thumbnailPromptV2Text" class="text-malicious-yellow small" style="max-height: 150px; overflow-y: auto;">
                                     Prompt will appear here after analysis...
                                 </div>
                             </div>
-                            
-                            <div class="d-flex gap-2 mt-3">
+                            <div class="d-flex gap-2">
                                 <button onclick="copyText('thumbnailPromptV2Text')" class="btn btn-sm btn-dark flex-fill">Copy Prompt</button>
-                                <button onclick="downloadThumbnail('thumbnailImageV2')" class="btn btn-sm btn-success flex-fill">Download</button>
+                                <button onclick="alert('Image generation removed in v4.0. Use prompts with external tools.')" class="btn btn-sm btn-secondary flex-fill">Generator Removed</button>
                             </div>
                         </div>
                     </div>
@@ -502,42 +511,12 @@
                         <i class="bi bi-palette"></i> Viral Indian Thumbnail Formula Bank
                     </h4>
                     <div class="row row-cols-1 row-cols-md-2 g-2">
-                        <div class="col">
-                            <div class="bg-black p-2 border border-danger">
-                                <div class="text-malicious-yellow fw-bold small">SHOCK VALUE</div>
-                                <div class="text-visible small">"Shocking [Topic] Exposed! You Won't Believe"</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="bg-black p-2 border border-danger">
-                                <div class="text-malicious-yellow fw-bold small">CRIME DOCUMENTARY</div>
-                                <div class="text-visible small">"Police Finally Solved [Case]! Truth"</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="bg-black p-2 border border-danger">
-                                <div class="text-malicious-yellow fw-bold small">CONTROVERSY</div>
-                                <div class="text-visible small">"The Truth About [Topic] Nobody Tells"</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="bg-black p-2 border border-danger">
-                                <div class="text-malicious-yellow fw-bold small">URGENCY</div>
-                                <div class="text-visible small">"Watch Before Deleted! [Topic] Leaked"</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="bg-black p-2 border border-danger">
-                                <div class="text-malicious-yellow fw-bold small">LISTICLE</div>
-                                <div class="text-visible small">"Top 5 Cases That Will Give You Chills"</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="bg-black p-2 border border-danger">
-                                <div class="text-malicious-yellow fw-bold small">QUESTION</div>
-                                <div class="text-visible small">"Is [Suspect] Innocent? Files Reveal"</div>
-                            </div>
-                        </div>
+                        <div class="col"><div class="bg-black p-2 border border-danger"><div class="text-malicious-yellow fw-bold small">SHOCK VALUE</div><div class="text-visible small">"Shocking [Topic] Exposed! You Won't Believe"</div></div></div>
+                        <div class="col"><div class="bg-black p-2 border border-danger"><div class="text-malicious-yellow fw-bold small">CRIME DOCUMENTARY</div><div class="text-visible small">"Police Finally Solved [Case]! Truth"</div></div></div>
+                        <div class="col"><div class="bg-black p-2 border border-danger"><div class="text-malicious-yellow fw-bold small">CONTROVERSY</div><div class="text-visible small">"The Truth About [Topic] Nobody Tells"</div></div></div>
+                        <div class="col"><div class="bg-black p-2 border border-danger"><div class="text-malicious-yellow fw-bold small">URGENCY</div><div class="text-visible small">"Watch Before Deleted! [Topic] Leaked"</div></div></div>
+                        <div class="col"><div class="bg-black p-2 border border-danger"><div class="text-malicious-yellow fw-bold small">LISTICLE</div><div class="text-visible small">"Top 5 Cases That Will Give You Chills"</div></div></div>
+                        <div class="col"><div class="bg-black p-2 border border-danger"><div class="text-malicious-yellow fw-bold small">QUESTION</div><div class="text-visible small">"Is [Suspect] Innocent? Files Reveal"</div></div></div>
                     </div>
                 </div>
             </div>
@@ -634,9 +613,9 @@
             <div class="section-divider"></div>
 
             <!-- SAMRAT'S NEW ADVANCED WARFARE MODULES -->
-            <div class="card-malicious p-4 mb-4 border-cyan" style="border-color: #00ffff !important;">
+            <div class="card-malicious p-4 mb-4 border-cyan" style="border-color: #00f0ff !important;">
                 <h3 class="h5 text-malicious-cyan threat-text mb-4">
-                    <i class="bi bi-ev-station"></i> Advanced Warfare Modules v3.0 (by @Samrat)
+                    <i class="bi bi-stars"></i> Advanced Warfare Modules v4.0 (by @Samrat)
                 </h3>
                 
                 <!-- MASS COMMENT TEMPLATE GENERATOR -->
@@ -809,8 +788,8 @@
 
         // --- INITIALIZATION ---
         function initializeApp() {
-            logDebug("=== DOMINATOR v3.0 BOOT SEQUENCE ===");
-            logDebug("Modern Malicious UI: ENGAGED | Creator: @Samrat");
+            logDebug("=== DOMINATOR v4.0 BOOT SEQUENCE ===");
+            logDebug("Fresh Design: ACTIVE | Creator: @Samrat | Image Gen: REMOVED");
             
             const criticalElements = ['debugLog', 'videoUrl', 'analyzeBtn', 'loading', 'results', 'statusMessage'];
             let allOk = true;
@@ -864,51 +843,9 @@
                 .replace(/```([\s\S]*?)```/g, '$1');
         }
 
-        // --- POLLING FUNCTION ---
-        async function pollTaskStatus(statusUrl, maxAttempts = 60) {
-            const fullUrl = `https://api.freepik.com${statusUrl}`;
-            logDebug("Starting status polling...", { url: fullUrl, maxAttempts });
-            
-            for (let i = 0; i < maxAttempts; i++) {
-                try {
-                    logDebug(`Poll attempt ${i + 1}/${maxAttempts}`);
-                    
-                    const response = await fetch(fullUrl, {
-                        method: 'GET',
-                        headers: {
-                            "Accept": "application/json",
-                            "x-freepik-api-key": "FPSXe868b34944981f8b1d3bf09ceee04556"
-                        }
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error(`Status check failed: ${response.status}`);
-                    }
-                    
-                    const data = await response.json();
-                    logDebug("Poll response received", { status: data.status, attempt: i + 1 });
-                    
-                    if (data.status === 'COMPLETED') {
-                        logDebug("Task completed successfully!");
-                        return data;
-                    } else if (data.status === 'FAILED') {
-                        throw new Error("Task failed on server: " + JSON.stringify(data));
-                    }
-                    
-                    await new Promise(resolve => setTimeout(resolve, 3000));
-                    
-                } catch (error) {
-                    logDebug("Polling error: " + error.message);
-                    throw error;
-                }
-            }
-            
-            throw new Error("Max polling attempts reached. Task may still be processing.");
-        }
-
         // --- ADVANCED WARFARE MODULES GENERATION ---
         function generateAdvancedWarfareModules(payload) {
-            logDebug("Generating Samrat's advanced warfare modules...");
+            logDebug("Generating Samrat's advanced warfare modules v4.0...");
             
             // 1. Mass Comment Template Generator (50 variations)
             const commentTemplates = Array.from({length: 50}, (_, i) => {
@@ -985,110 +922,7 @@ Step 2: Link them in description:
 
 Step 3: Makes your video look like source material.`;
             
-            logDebug("Advanced warfare modules generated successfully");
-        }
-
-        // --- THUMBNAIL GENERATION API ---
-        async function generateThumbnailImage(promptText, statusElementId) {
-            try {
-                logDebug("Initiating Freepik Mystic thumbnail generation...", promptText.substring(0, 150));
-                
-                const statusEl = getEl(statusElementId);
-                statusEl.classList.remove('d-none');
-                statusEl.innerText = '⏳ Initiating generation...';
-                
-                const payload = {
-                    prompt: promptText,
-                    aspect_ratio: "widescreen_16_9",
-                    guidance_scale: 2.5
-                };
-                
-                logDebug("Calling Freepik Mystic API...");
-                const response = await fetch("https://api.freepik.com/v1/ai/mystic ", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        "x-freepik-api-key": "FPSXe868b34944981f8b1d3bf09ceee04556"
-                    },
-                    body: JSON.stringify(payload)
-                });
-                
-                if (!response.ok) {
-                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                logDebug("Freepik API response received", data);
-                
-                if (data.status === 'PENDING' && data.statusUrl) {
-                    logDebug("Task queued successfully, starting polling...");
-                    statusEl.innerText = '🎨 Generating image (this may take 10-30 seconds)...';
-                    
-                    const finalData = await pollTaskStatus(data.statusUrl);
-                    
-                    let imageUrl = null;
-                    if (finalData.resources && finalData.resources.length > 0 && finalData.resources[0].src) {
-                        imageUrl = finalData.resources[0].src;
-                    } else if (finalData.data && finalData.data.generated && finalData.data.generated.length > 0) {
-                        imageUrl = finalData.data.generated[0];
-                    }
-                    
-                    if (imageUrl) {
-                        logDebug("Image URL extracted successfully", { url: imageUrl.substring(0, 100) + '...' });
-                        statusEl.classList.add('d-none');
-                        return imageUrl;
-                    } else {
-                        throw new Error("No image URL found in completed task: " + JSON.stringify(finalData));
-                    }
-                } else {
-                    throw new Error("Unexpected initial response: " + JSON.stringify(data));
-                }
-                
-            } catch (error) {
-                logDebug("Thumbnail generation failed: " + error.message);
-                throw error;
-            }
-        }
-
-        // --- HANDLE THUMBNAIL GENERATION ---
-        async function handleGenerateThumbnail(promptElementId, imageElementId, loadingElementId, errorElementId, statusElementId) {
-            const promptText = getEl(promptElementId).innerText;
-            
-            if (!promptText || promptText === "Prompt will appear here after analysis...") {
-                alert("No prompt available yet! Please analyze a video first.");
-                return;
-            }
-            
-            logDebug("User clicked generate for " + imageElementId);
-            
-            getEl(loadingElementId).classList.remove('d-none');
-            getEl(errorElementId).classList.add('d-none');
-            getEl(imageElementId).classList.add('d-none');
-            getEl(statusElementId).classList.remove('d-none');
-            
-            const button = event.target;
-            button.disabled = true;
-            button.innerHTML = '<i class="bi bi-arrow-repeat spin"></i> Generating...';
-            
-            try {
-                const imageUrl = await generateThumbnailImage(promptText, statusElementId);
-                getEl(imageElementId).src = imageUrl;
-                getEl(imageElementId).classList.remove('d-none');
-                getEl(loadingElementId).classList.add('d-none');
-                logDebug("Thumbnail loaded successfully: " + imageElementId);
-            } catch (error) {
-                logDebug("Thumbnail generation failed: " + error.message);
-                getEl(loadingElementId).classList.add('d-none');
-                getEl(statusElementId).classList.add('d-none');
-                getEl(errorElementId).innerText = 'Generation failed: ' + error.message;
-                getEl(errorElementId).classList.remove('d-none');
-            } finally {
-                button.disabled = false;
-                button.innerHTML = button.id === 'generateBtnV1' ? 
-                    '<i class="bi bi-magic"></i> Generate Thumbnail V1' : 
-                    '<i class="bi bi-magic"></i> Generate Thumbnail V2';
-            }
+            logDebug("Advanced warfare modules v4.0 generated successfully");
         }
 
         // --- ATTACK EXECUTION ---
@@ -1179,6 +1013,15 @@ COMPETITORS: ${competitors.map(c => c.snippet.title).join(" | ")}
 CATEGORY: ${video.snippet.categoryId || 'general'}
 CONTENT_TYPE: ${isCrimeContent ? 'CRIME_DOCUMENTARY' : 'GENERAL'}
 
+ENHANCED_PROTOCOLS: {
+  "viewBotTrigger": "${getEl('nukeViewBotTrigger').checked}",
+  "massFlagTargets": "${getEl('nukeMassFlagTargets').checked}", 
+  "ageRestrictionBypass": "${getEl('nukeAgeRestrictionBypass').checked}",
+  "monetizationClickbait": "${getEl('nukeMonetizationClickbait').checked}",
+  "cycleUploadStrategy": "${getEl('nukeCycleUploadStrategy').checked}",
+  "keywordCannibalism": "${getEl('nukeKeywordCannibalism').checked}"
+}
+
 RULES:
 1. 5 title variants with Indian viral hooks (use clean Indian English with light Hinglish)
 2. 600-word description, 8-12% keyword density with Indian context
@@ -1187,6 +1030,12 @@ RULES:
 5. 5 comment baits targeting Indian audience, 5 CTR hooks
 6. Fake timestamps grid with Indian cultural references
 7. Generate 2 DIFFERENT viral thumbnail prompts based on video content - CRIME DOCUMENTARY FOCUSED
+8. IF viewBotTrigger=true: Add view-bot triggering keywords like "viral2024", "trendingnow", "explosive"
+9. IF massFlagTargets=true: Include competitor names in hidden keywords for flagging
+10. IF ageRestrictionBypass=true: Use Unicode to bypass age filter
+11. IF monetizationClickbait=true: Add advertiser-friendly but clickbait elements
+12. IF cycleUploadStrategy=true: Add upload schedule recommendations
+13. IF keywordCannibalism=true: Target competitor video titles directly in keywords
 
 CRITICAL: 
 - NO markdown symbols like **, *, __ etc. Pure text only.
@@ -1210,10 +1059,13 @@ Return JSON:
   "commentBait": ["Question 1?", "Question 2?"],
   "socialProof": ["98% failed...", "Only 2% know..."],
   "ctrHooks": ["HOOK1", "HOOK2"],
-  "mainKeyword": "primary keyword"
+  "mainKeyword": "primary keyword",
+  "viewBotKeywords": ["viral2024", "trendingnow", "explosive", "breaking", "exclusive"],
+  "flagTargets": ["competitor1", "competitor2"],
+  "uploadSchedule": "Upload at 3AM IST, delete at 6AM, reupload with variations"
 }`;
 
-                logDebug("Sending to Gemini API...", { promptLength: geminiPrompt.length });
+                logDebug("Sending to Gemini API with enhanced protocols...", { promptLength: geminiPrompt.length });
                 const geminiRes = await fetch(GEMINI_URL, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
@@ -1252,7 +1104,7 @@ Return JSON:
                 getEl('loading').classList.add('d-none');
                 getEl('results').classList.remove('d-none');
                 
-                logDebug("ATTACK COMPLETED SUCCESSFULLY by @Samrat - Ready for manual thumbnail generation");
+                logDebug("ATTACK COMPLETED SUCCESSFULLY by @Samrat - All 12 protocols active");
                 
             } catch (error) {
                 logDebug("FATAL ERROR: " + error.message);
@@ -1275,14 +1127,8 @@ Return JSON:
             getEl('thumbnailPromptV1Text').innerText = promptV1;
             getEl('thumbnailPromptV2Text').innerText = promptV2;
             
-            // Reset all thumbnail states
-            getEl('thumbnailImageV1').classList.add('d-none');
-            getEl('thumbnailLoadingV1').classList.add('d-none');
-            getEl('thumbnailErrorV1').classList.add('d-none');
+            // Reset thumbnail states (no images in v4.0)
             getEl('thumbnailStatusV1').classList.add('d-none');
-            getEl('thumbnailImageV2').classList.add('d-none');
-            getEl('thumbnailLoadingV2').classList.add('d-none');
-            getEl('thumbnailErrorV2').classList.add('d-none');
             getEl('thumbnailStatusV2').classList.add('d-none');
             
             logDebug("Rendering title variants...");
@@ -1345,16 +1191,7 @@ Return JSON:
         }
 
         function downloadThumbnail(imageId) {
-            const img = getEl(imageId);
-            if (img.src && !img.classList.contains('d-none')) {
-                const link = document.createElement('a');
-                link.href = img.src;
-                link.download = 'thumbnail-' + imageId + '-' + Date.now() + '.png';
-                link.click();
-                logDebug("Download initiated for " + imageId);
-            } else {
-                alert("Thumbnail not generated yet! Click 'Generate Thumbnail' first.");
-            }
+            alert('Image generation removed in v4.0. Use prompts with external tools like Freepik Mystic, Midjourney, or Stable Diffusion.');
         }
 
         function calculateKeywordDensity(text, keyword) {
@@ -1363,8 +1200,8 @@ Return JSON:
             return ((count / words.length) * 100).toFixed(1);
         }
 
-        logDebug("DOMINATOR v3.0 fully initialized and hardened");
-        logDebug("Modern Malicious UI: ENGAGED | Creator: @Samrat");
+        logDebug("DOMINATOR v4.0 fully initialized and hardened");
+        logDebug("Fresh Design: ENGAGED | 12 Protocols Active | Image Gen: REMOVED");
         logDebug("Ready to execute attack sequence");
     </script>
 </body>
