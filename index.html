@@ -2,305 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube SEO Rank Dominator - Outrank Competitors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>YouTube Rank Analyzer - Mobile Optimized</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --bg-primary: #0f0f0f;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #252525;
+            --text-primary: #f0f0f0;
+            --text-secondary: #aaaaaa;
+            --accent-primary: #ff0000;
+            --accent-secondary: #03dac6;
+            --warning: #ffb300;
+            --error: #cf6679;
+            --success: #4caf50;
+            --border: #333333;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: #e2e8f0;
-            line-height: 1.6;
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 100%;
+            padding: 16px;
             margin: 0 auto;
-            padding: 20px;
         }
 
         header {
-            text-align: center;
-            padding: 30px 0;
-            background: linear-gradient(135deg, #ff0000, #cc0000);
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 24px;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 24px;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: var(--text-primary);
         }
 
         .subtitle {
-            font-size: 1.1em;
-            opacity: 0.9;
-            margin-top: 10px;
-        }
-
-        .api-config {
-            background: rgba(30, 41, 59, 0.8);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            border: 1px solid #334155;
-        }
-
-        .api-config h2 {
-            color: #60a5fa;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .api-input-group {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .api-input-group input {
-            flex: 1;
-            min-width: 300px;
-            padding: 12px;
-            background: #1e293b;
-            border: 2px solid #334155;
-            border-radius: 8px;
-            color: #e2e8f0;
             font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
         }
 
-        .api-input-group input:focus {
-            outline: none;
-            border-color: #60a5fa;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            color: white;
-            border: none;
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 14px;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
-        }
-
-        .btn:active {
-            transform: translateY(0);
-        }
-
-        .btn-success {
-            background: linear-gradient(135deg, #10b981, #059669);
-        }
-
-        .btn-success:hover {
-            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
-        }
-
-        .btn-warning {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-        }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        .input-section {
-            background: rgba(30, 41, 59, 0.8);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-        }
-
-        .input-section h2 {
-            color: #60a5fa;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            padding: 16px;
+            margin-bottom: 16px;
         }
 
         .input-group {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #cbd5e1;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            background: #1e293b;
-            border: 2px solid #334155;
-            border-radius: 8px;
-            color: #e2e8f0;
             font-size: 14px;
-            transition: border-color 0.3s;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #60a5fa;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .analyze-btn {
-            width: 100%;
-            padding: 15px;
-            font-size: 16px;
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-        }
-
-        .analyze-btn:hover {
-            box-shadow: 0 5px 20px rgba(139, 92, 246, 0.5);
-        }
-
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .result-card {
-            background: rgba(30, 41, 59, 0.9);
-            padding: 20px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-            position: relative;
-        }
-
-        .result-card h3 {
-            color: #60a5fa;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3em;
-        }
-
-        .current-meta {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 4px solid #64748b;
-        }
-
-        .optimized-meta {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-        }
-
-        .meta-item {
-            margin-bottom: 12px;
-        }
-
-        .meta-label {
-            font-weight: 600;
-            color: #94a3b8;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
-        }
-
-        .meta-value {
-            font-size: 14px;
-            line-height: 1.5;
-            color: #e2e8f0;
-        }
-
-        .tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
-
-        .tag {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
             font-weight: 500;
-        }
-
-        .copy-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 8px 16px;
-            font-size: 12px;
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-        }
-
-        .copy-btn:hover {
-            box-shadow: 0 3px 10px rgba(139, 92, 246, 0.4);
-        }
-
-        .competitor-analysis {
-            background: rgba(30, 41, 59, 0.8);
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 30px;
-            border: 1px solid #334155;
-        }
-
-        .competitor-item {
-            background: rgba(15, 23, 42, 0.6);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border-left: 4px solid #f59e0b;
-        }
-
-        .competitor-title {
-            font-weight: 600;
-            color: #fbbf24;
+            color: var(--text-primary);
             margin-bottom: 8px;
         }
 
-        .competitor-stats {
-            display: flex;
-            gap: 20px;
-            font-size: 0.9em;
-            color: #94a3b8;
+        input, select {
+            width: 100%;
+            padding: 14px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 16px;
+            transition: border-color 0.2s;
         }
 
-        .stat {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        button {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent-primary);
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            min-height: 48px;
+        }
+
+        button:active {
+            opacity: 0.8;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
         }
 
         .loading {
@@ -314,13 +135,13 @@
         }
 
         .spinner {
-            border: 4px solid #334155;
-            border-top: 4px solid #60a5fa;
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--bg-tertiary);
+            border-top: 3px solid var(--accent-primary);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
             animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+            margin: 0 auto 16px;
         }
 
         @keyframes spin {
@@ -329,251 +150,407 @@
         }
 
         .alert {
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            font-size: 14px;
         }
 
         .alert-error {
-            background: rgba(220, 38, 38, 0.2);
-            border-color: #dc2626;
-            color: #fecaca;
+            background: rgba(207, 102, 121, 0.1);
+            border: 1px solid var(--error);
+            color: var(--error);
         }
 
         .alert-success {
-            background: rgba(16, 185, 129, 0.2);
-            border-color: #10b981;
-            color: #a7f3d0;
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
         }
 
         .alert-info {
-            background: rgba(59, 130, 246, 0.2);
-            border-color: #3b82f6;
-            color: #bfdbfe;
-        }
-
-        .seo-score {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin: 20px 0;
-            padding: 15px;
-            background: rgba(15, 23, 42, 0.8);
-            border-radius: 8px;
-        }
-
-        .score-circle {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.5em;
-            position: relative;
-            background: conic-gradient(#10b981 0deg, #334155 0deg);
-        }
-
-        .score-circle::before {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: #1e293b;
-        }
-
-        .score-text {
-            position: relative;
-            z-index: 1;
-        }
-
-        .score-details {
-            flex: 1;
-        }
-
-        .score-bar {
-            height: 8px;
-            background: #334155;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .score-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #10b981, #059669);
-            transition: width 0.5s ease;
-        }
-
-        @media (max-width: 768px) {
-            .results-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .api-input-group {
-                flex-direction: column;
-            }
-            
-            .api-input-group input {
-                min-width: 100%;
-            }
+            background: rgba(255, 179, 0, 0.1);
+            border: 1px solid var(--warning);
+            color: var(--warning);
         }
 
         .hidden {
             display: none;
         }
 
-        .optimization-tips {
-            background: rgba(30, 41, 59, 0.8);
+        .score-section {
+            text-align: center;
             padding: 20px;
-            border-radius: 12px;
-            margin-top: 20px;
-            border: 1px solid #334155;
+            background: var(--bg-tertiary);
+            border-radius: 8px;
+            margin-bottom: 24px;
         }
 
-        .tip-item {
-            background: rgba(15, 23, 42, 0.6);
+        .score-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .score-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .score-bad {
+            color: var(--error);
+        }
+
+        .score-average {
+            color: var(--warning);
+        }
+
+        .score-good {
+            color: var(--success);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .meta-item {
+            margin-bottom: 20px;
+        }
+
+        .meta-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .meta-value {
+            font-size: 14px;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .tag {
+            padding: 6px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            font-size: 12px;
+        }
+
+        .tag-opportunity {
+            background: rgba(3, 218, 198, 0.1);
+            border-color: var(--accent-secondary);
+            color: var(--accent-secondary);
+        }
+
+        .competitor-item {
+            background: var(--bg-tertiary);
             padding: 12px;
             border-radius: 6px;
-            margin-bottom: 10px;
-            border-left: 4px solid #3b82f6;
+            margin-bottom: 12px;
         }
 
-        .tip-item::before {
-            content: "💡 ";
-            margin-right: 8px;
+        .competitor-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .competitor-stats {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .gap-item {
+            background: rgba(3, 218, 198, 0.1);
+            border: 1px solid var(--accent-secondary);
+            border-radius: 6px;
+            padding: 12px;
+            margin-bottom: 12px;
+        }
+
+        .gap-keyword {
+            font-weight: 600;
+            color: var(--accent-secondary);
+            margin-bottom: 4px;
+        }
+
+        .gap-reason {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-small {
+            flex: 1;
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: monospace;
+            resize: vertical;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 12px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+            
+            input, select, button, textarea {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+        }
+
+        .collapsible {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .collapsible::after {
+            content: '▼';
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+
+        .collapsible.active::after {
+            transform: rotate(-90deg);
+        }
+
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+
+        .collapsible-content.active {
+            max-height: none;
+            margin-top: 16px;
+        }
+
+        .api-status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--error);
+            margin-left: 8px;
+        }
+
+        .api-status.connected {
+            background: var(--success);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🎯 YouTube SEO Rank Dominator</h1>
-            <p class="subtitle">Analyze Your Video & Outrank Competitors with AI-Powered SEO</p>
+            <h1>YouTube Rank Analyzer</h1>
+            <p class="subtitle">Real SEO insights with keyword gap analysis</p>
         </header>
 
-        <div class="api-config">
-            <h2>🔑 API Configuration (Save Once)</h2>
-            <div class="api-input-group">
-                <input type="password" id="apiKey" placeholder="Enter YouTube Data API Key">
-                <button class="btn" onclick="saveApiKey()">Save API Key</button>
-                <button class="btn btn-warning" onclick="clearApiKey()">Clear</button>
+        <!-- API Configuration -->
+        <div class="card">
+            <div class="collapsible" onclick="toggleCollapsible(this)">
+                <h2 class="section-title" style="margin: 0; font-size: 16px;">
+                    API Configuration
+                    <span class="api-status" id="apiStatus"></span>
+                </h2>
             </div>
-            <p style="font-size: 12px; margin-top: 10px; color: #94a3b8;">
-                Get your API key from: <a href="https://console.cloud.google.com/apis/credentials" target="_blank" style="color: #60a5fa;">Google Cloud Console</a>
-            </p>
+            <div class="collapsible-content">
+                <div class="input-group" style="margin-top: 12px;">
+                    <label for="apiKey">YouTube Data API Key</label>
+                    <input type="password" id="apiKey" placeholder="Enter API key">
+                </div>
+                <div class="button-group">
+                    <button class="btn-secondary btn-small" onclick="saveApiKey()">Save</button>
+                    <button class="btn-secondary btn-small" onclick="testApiKey()">Test</button>
+                    <button class="btn-secondary btn-small" onclick="clearApiKey()">Clear</button>
+                </div>
+                <p style="font-size: 12px; color: var(--text-secondary); margin-top: 8px;">
+                    Get key: console.cloud.google.com/apis/credentials
+                </p>
+            </div>
         </div>
 
-        <div class="main-content">
-            <div class="input-section">
-                <h2>📺 Enter Your YouTube Video</h2>
-                <div class="input-group">
-                    <label for="videoUrl">YouTube Video URL or ID:</label>
-                    <input type="text" id="videoUrl" placeholder="https://www.youtube.com/watch?v=VIDEO_ID or just VIDEO_ID">
-                </div>
-                
-                <div class="input-group">
-                    <label for="language">Target Language/Region:</label>
-                    <select id="language">
-                        <option value="en">English (US)</option>
-                        <option value="hi">Hindi (India)</option>
-                        <option value="en-IN">English (India)</option>
-                        <option value="bn">Bengali</option>
-                        <option value="mr">Marathi</option>
-                        <option value="ta">Tamil</option>
-                        <option value="te">Telugu</option>
-                    </select>
-                </div>
+        <!-- Video Input -->
+        <div class="card">
+            <h2 class="section-title">📺 Video Analysis</h2>
+            <div class="input-group">
+                <label for="videoUrl">Video URL or ID</label>
+                <input type="text" id="videoUrl" placeholder="youtube.com/watch?v=...">
+            </div>
+            <div class="input-group">
+                <label for="language">Target Region</label>
+                <select id="language">
+                    <option value="en">English (US)</option>
+                    <option value="hi">Hindi (India)</option>
+                    <option value="en-IN">English (India)</option>
+                    <option value="bn">Bengali</option>
+                </select>
+            </div>
+            <button onclick="analyzeVideo()" id="analyzeBtn">Analyze Video</button>
+        </div>
 
-                <button class="btn analyze-btn" onclick="analyzeAndOptimize()">
-                    🚀 Analyze & Generate SEO Optimization
-                </button>
+        <!-- Loading State -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Analyzing competitors & keywords...</p>
+        </div>
 
-                <div class="loading" id="loading">
-                    <div class="spinner"></div>
-                    <p>Analyzing your video and competitors...</p>
-                    <p style="font-size: 14px; opacity: 0.7;">This may take 30-60 seconds</p>
+        <!-- Messages -->
+        <div id="message"></div>
+
+        <!-- Results -->
+        <div id="results" class="hidden">
+            <!-- SEO Score -->
+            <div class="card">
+                <div class="score-section">
+                    <div class="score-number" id="seoScore">--</div>
+                    <div class="score-label">SEO Score</div>
+                    <div class="metric-grid">
+                        <div class="metric-item">
+                            <div class="metric-value" id="viewCount">0</div>
+                            <div class="metric-label">Views</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="competitorCount">0</div>
+                            <div class="metric-label">Competitors</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="gapCount">0</div>
+                            <div class="metric-label">Opportunities</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value" id="difficulty">--</div>
+                            <div class="metric-label">Difficulty</div>
+                        </div>
+                    </div>
                 </div>
-
-                <div id="message"></div>
             </div>
 
-            <div id="resultsSection" class="hidden">
-                <div class="seo-score">
-                    <div class="score-circle" id="scoreCircle">
-                        <div class="score-text" id="scoreText">--</div>
+            <!-- Current Metadata -->
+            <div class="card">
+                <div class="collapsible" onclick="toggleCollapsible(this)">
+                    <h2 class="section-title" style="margin: 0; font-size: 16px;">📊 Current Metadata</h2>
+                </div>
+                <div class="collapsible-content">
+                    <div class="meta-item">
+                        <div class="meta-label">Title</div>
+                        <div class="meta-value" id="currentTitle"></div>
                     </div>
-                    <div class="score-details">
-                        <h3>SEO Optimization Score</h3>
-                        <p id="scoreDescription">Analysis in progress...</p>
-                        <div class="score-bar">
-                            <div class="score-bar-fill" id="scoreBarFill" style="width: 0%"></div>
-                        </div>
-                        <p style="font-size: 14px; color: #94a3b8;">Higher scores = Better ranking potential</p>
+                    <div class="meta-item">
+                        <div class="meta-label">Description</div>
+                        <textarea id="currentDescription" readonly></textarea>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Tags</div>
+                        <div class="tag-container" id="currentTags"></div>
                     </div>
                 </div>
+            </div>
 
-                <div class="competitor-analysis">
-                    <h3>🏆 Top 5 Ranking Competitors</h3>
-                    <div id="competitorList"></div>
+            <!-- Keyword Gaps -->
+            <div class="card">
+                <div class="collapsible" onclick="toggleCollapsible(this)">
+                    <h2 class="section-title" style="margin: 0; font-size: 16px;">🔍 Keyword Opportunities</h2>
                 </div>
+                <div class="collapsible-content" id="gapContainer"></div>
+            </div>
 
-                <div class="results-grid">
-                    <div class="result-card">
-                        <button class="btn copy-btn" onclick="copyToClipboard('optimizedTitle')">Copy</button>
-                        <h3>📝 Optimized Title</h3>
-                        <div class="current-meta">
-                            <div class="meta-label">Current Title:</div>
-                            <div class="meta-value" id="currentTitle"></div>
-                        </div>
-                        <div class="optimized-meta">
-                            <div class="meta-label">Optimized Title:</div>
-                            <div class="meta-value" id="optimizedTitle"></div>
-                        </div>
-                    </div>
-
-                    <div class="result-card">
-                        <button class="btn copy-btn" onclick="copyToClipboard('optimizedDescription')">Copy</button>
-                        <h3>📋 Optimized Description</h3>
-                        <div class="current-meta">
-                            <div class="meta-label">Current Description:</div>
-                            <div class="meta-value" id="currentDescription"></div>
-                        </div>
-                        <div class="optimized-meta">
-                            <div class="meta-label">Optimized Description:</div>
-                            <div class="meta-value" id="optimizedDescription"></div>
-                        </div>
-                    </div>
-
-                    <div class="result-card">
-                        <button class="btn copy-btn" onclick="copyToClipboard('optimizedTags')">Copy All</button>
-                        <h3>🏷️ Optimized SEO Tags</h3>
-                        <div class="current-meta">
-                            <div class="meta-label">Current Tags:</div>
-                            <div class="meta-value" id="currentTags"></div>
-                        </div>
-                        <div class="optimized-meta">
-                            <div class="meta-label">Optimized Tags:</div>
-                            <div class="tag-container" id="optimizedTags"></div>
-                        </div>
-                    </div>
-
-                    <div class="result-card">
-                        <h3>📊 Competitor Keywords</h3>
-                        <div class="optimized-meta">
-                            <div class="meta-label">High-Performing Keywords:</div>
-                            <div class="tag-container" id="competitorKeywords"></div>
-                        </div>
-                    </div>
+            <!-- Optimized Title -->
+            <div class="card">
+                <div class="meta-item">
+                    <div class="meta-label">Optimized Title</div>
+                    <textarea id="optimizedTitle"></textarea>
+                    <button class="btn-small" onclick="copyToClipboard('optimizedTitle')" style="margin-top: 8px;">Copy</button>
                 </div>
+            </div>
 
-                <div class="optimization-tips">
-                    <h3>💡 Implementation Tips</h3>
-                    <div id="tipsList"></div>
+            <!-- Optimized Description -->
+            <div class="card">
+                <div class="meta-item">
+                    <div class="meta-label">Optimized Description</div>
+                    <textarea id="optimizedDescription"></textarea>
+                    <button class="btn-small" onclick="copyToClipboard('optimizedDescription')" style="margin-top: 8px;">Copy</button>
                 </div>
+            </div>
+
+            <!-- Optimized Tags -->
+            <div class="card">
+                <div class="meta-item">
+                    <div class="meta-label">Optimized Tags (High Priority)</div>
+                    <div class="tag-container" id="optimizedTags"></div>
+                    <button class="btn-small" onclick="copyTags()" style="margin-top: 8px;">Copy All Tags</button>
+                </div>
+            </div>
+
+            <!-- Competitors -->
+            <div class="card">
+                <div class="collapsible" onclick="toggleCollapsible(this)">
+                    <h2 class="section-title" style="margin: 0; font-size: 16px;">🏆 Top Competitors</h2>
+                </div>
+                <div class="collapsible-content" id="competitorContainer"></div>
             </div>
         </div>
     </div>
@@ -582,26 +559,25 @@
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
             loadApiKey();
+            updateApiStatus();
         });
 
-        // API Key Management
+        // API Management
         function saveApiKey() {
-            const apiKey = document.getElementById('apiKey').value.trim();
-            if (!apiKey) {
-                showMessage('Please enter a valid API key', 'error');
+            const key = document.getElementById('apiKey').value.trim();
+            if (!key) {
+                showMessage('Enter valid API key', 'error');
                 return;
             }
-            
-            localStorage.setItem('youtube_api_key', apiKey);
-            showMessage('API key saved successfully!', 'success');
-            document.getElementById('apiKey').type = 'password';
+            localStorage.setItem('youtube_api_key', key);
+            showMessage('API key saved', 'success');
+            updateApiStatus();
         }
 
         function loadApiKey() {
-            const savedKey = localStorage.getItem('youtube_api_key');
-            if (savedKey) {
-                document.getElementById('apiKey').value = savedKey;
-                document.getElementById('apiKey').type = 'password';
+            const key = localStorage.getItem('youtube_api_key');
+            if (key) {
+                document.getElementById('apiKey').value = key;
             }
         }
 
@@ -609,18 +585,114 @@
             localStorage.removeItem('youtube_api_key');
             document.getElementById('apiKey').value = '';
             showMessage('API key cleared', 'info');
+            updateApiStatus();
         }
 
-        // Show messages
+        function updateApiStatus() {
+            const status = document.getElementById('apiStatus');
+            const key = localStorage.getItem('youtube_api_key');
+            status.classList.toggle('connected', !!key);
+        }
+
+        async function testApiKey() {
+            const key = localStorage.getItem('youtube_api_key');
+            if (!key) {
+                showMessage('No API key saved', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=id&q=test&maxResults=1&key=${key}`);
+                if (response.ok) {
+                    showMessage('API key is valid', 'success');
+                } else {
+                    showMessage('API key test failed', 'error');
+                }
+            } catch (e) {
+                showMessage('Network error testing API', 'error');
+            }
+        }
+
+        // UI Helpers
         function showMessage(text, type = 'info') {
             const messageEl = document.getElementById('message');
             messageEl.innerHTML = `<div class="alert alert-${type}">${text}</div>`;
-            setTimeout(() => {
-                messageEl.innerHTML = '';
-            }, 5000);
+            setTimeout(() => messageEl.innerHTML = '', 4000);
         }
 
-        // Extract video ID from URL
+        function toggleCollapsible(element) {
+            element.classList.toggle('active');
+            const content = element.nextElementSibling;
+            content.classList.toggle('active');
+        }
+
+        // Video Analysis
+        async function analyzeVideo() {
+            const apiKey = localStorage.getItem('youtube_api_key');
+            const videoUrl = document.getElementById('videoUrl').value.trim();
+            
+            if (!apiKey) {
+                showMessage('Save your API key first', 'error');
+                return;
+            }
+            
+            if (!videoUrl) {
+                showMessage('Enter a video URL', 'error');
+                return;
+            }
+
+            const videoId = extractVideoId(videoUrl);
+            if (!videoId) {
+                showMessage('Invalid YouTube URL format', 'error');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('analyzeBtn').disabled = true;
+            document.getElementById('results').classList.add('hidden');
+
+            try {
+                // Fetch video data
+                const videoData = await fetchVideoDetails(videoId, apiKey);
+                const stats = videoData.statistics || {};
+                
+                // Calculate REAL SEO score based on actual performance
+                const seoScore = calculateRealSEOScore(stats, videoData.snippet);
+                displayScore(seoScore, stats, videoData.snippet);
+
+                // Display current metadata
+                displayCurrentMetadata(videoData.snippet);
+
+                // Find competitors
+                const query = generateSearchQuery(videoData.snippet);
+                const competitors = await searchCompetitors(query, apiKey);
+                document.getElementById('competitorCount').textContent = competitors.length;
+
+                // Extract and display competitors
+                displayCompetitors(competitors);
+
+                // Keyword gap analysis
+                const gapKeywords = performKeywordGapAnalysis(videoData.snippet, competitors);
+                document.getElementById('gapCount').textContent = gapKeywords.length;
+                displayKeywordGaps(gapKeywords);
+
+                // Generate optimized metadata
+                generateOptimizedMetadata(videoData.snippet, competitors, gapKeywords);
+
+                // Show results
+                document.getElementById('results').classList.remove('hidden');
+                showMessage('Analysis complete', 'success');
+
+            } catch (error) {
+                console.error(error);
+                showMessage(`Error: ${error.message}`, 'error');
+            } finally {
+                document.getElementById('loading').classList.remove('active');
+                document.getElementById('analyzeBtn').disabled = false;
+            }
+        }
+
         function extractVideoId(url) {
             const patterns = [
                 /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
@@ -634,135 +706,138 @@
             return null;
         }
 
-        // Main analysis function
-        async function analyzeAndOptimize() {
-            const videoUrl = document.getElementById('videoUrl').value.trim();
-            const apiKey = localStorage.getItem('youtube_api_key');
-            
-            if (!apiKey) {
-                showMessage('Please save your YouTube Data API key first', 'error');
-                return;
-            }
-            
-            if (!videoUrl) {
-                showMessage('Please enter a YouTube video URL or ID', 'error');
-                return;
-            }
-
-            const videoId = extractVideoId(videoUrl);
-            if (!videoId) {
-                showMessage('Invalid YouTube URL or video ID format', 'error');
-                return;
-            }
-
-            // Show loading
-            document.getElementById('loading').classList.add('active');
-            document.getElementById('resultsSection').classList.add('hidden');
-            
-            try {
-                // Step 1: Get video details
-                const videoData = await fetchVideoDetails(videoId, apiKey);
-                if (!videoData) throw new Error('Failed to fetch video details');
-                
-                displayCurrentMetadata(videoData);
-                
-                // Step 2: Search for competitors
-                const searchQuery = generateSearchQuery(videoData);
-                const competitors = await searchCompetitors(searchQuery, apiKey);
-                
-                displayCompetitors(competitors);
-                
-                // Step 3: Generate optimized metadata
-                const optimized = generateOptimizedMetadata(videoData, competitors);
-                
-                displayOptimizedMetadata(optimized);
-                
-                // Step 4: Calculate SEO score
-                calculateSEOScore(videoData, optimized, competitors);
-                
-                // Show results
-                document.getElementById('resultsSection').classList.remove('hidden');
-                showMessage('Analysis complete! Optimized metadata generated.', 'success');
-                
-            } catch (error) {
-                console.error('Error:', error);
-                showMessage(`Error: ${error.message}. Please check your API key and try again.`, 'error');
-            } finally {
-                document.getElementById('loading').classList.remove('active');
-            }
-        }
-
-        // Fetch video details from YouTube API
         async function fetchVideoDetails(videoId, apiKey) {
-            const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,topicDetails&id=${videoId}&key=${apiKey}`;
-            
+            const url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoId}&key=${apiKey}`;
             const response = await fetch(url);
-            if (!response.ok) throw new Error('API request failed');
+            if (!response.ok) throw new Error('Video fetch failed');
             
             const data = await response.json();
-            if (!data.items || data.items.length === 0) throw new Error('Video not found');
+            if (!data.items?.length) throw new Error('Video not found');
             
             return data.items[0];
         }
 
-        // Generate search query from video data
-        function generateSearchQuery(videoData) {
-            const title = videoData.snippet.title;
-            const categoryId = videoData.snippet.categoryId;
+        // REAL SEO Score Calculation
+        function calculateRealSEOScore(stats, snippet) {
+            let score = 0;
             
-            // Extract key terms from title
-            const words = title.toLowerCase().split(/\s+/).filter(word => 
-                word.length > 3 && !['the', 'this', 'that', 'with', 'from'].includes(word)
-            );
+            // Views factor (0-30 points)
+            const viewCount = parseInt(stats.viewCount || 0);
+            if (viewCount < 100) score += 0;
+            else if (viewCount < 1000) score += 5;
+            else if (viewCount < 10000) score += 10;
+            else if (viewCount < 50000) score += 15;
+            else if (viewCount < 200000) score += 20;
+            else score += 30;
+
+            // Engagement rate factor (0-25 points)
+            const likes = parseInt(stats.likeCount || 0);
+            const comments = parseInt(stats.commentCount || 0);
+            const engagementRate = viewCount > 0 ? (likes + comments) / viewCount : 0;
             
-            // Use first 3-5 meaningful words
-            const searchTerms = words.slice(0, 5).join(' ');
+            if (engagementRate > 0.05) score += 25;
+            else if (engagementRate > 0.02) score += 15;
+            else if (engagementRate > 0.01) score += 8;
+            else if (engagementRate > 0.005) score += 3;
+
+            // Age factor (0-15 points) - newer is better for trending
+            const publishDate = new Date(snippet.publishedAt);
+            const ageDays = (Date.now() - publishDate) / (1000 * 60 * 60 * 24);
             
-            return searchTerms || title.substring(0, 50);
+            if (ageDays < 7) score += 15;
+            else if (ageDays < 30) score += 10;
+            else if (ageDays < 90) score += 5;
+
+            // Metadata completeness (0-20 points)
+            const titleLength = snippet.title?.length || 0;
+            const descLength = snippet.description?.length || 0;
+            const tagCount = snippet.tags?.length || 0;
+            
+            if (titleLength >= 40 && titleLength <= 80) score += 7;
+            if (descLength > 200) score += 8;
+            if (tagCount >= 10) score += 5;
+
+            // Channel authority (0-10 points) - placeholder
+            score += 5; // Assuming average channel
+
+            return Math.round(score);
         }
 
-        // Search for competitor videos
-        async function searchCompetitors(query, apiKey) {
-            const maxResults = 5;
-            const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=${maxResults}&key=${apiKey}`;
+        function displayScore(score, stats, snippet) {
+            document.getElementById('seoScore').textContent = score;
+            document.getElementById('viewCount').textContent = formatNumber(stats.viewCount || 0);
             
+            // Add score color
+            const scoreEl = document.getElementById('seoScore');
+            scoreEl.className = 'score-number';
+            if (score < 40) scoreEl.classList.add('score-bad');
+            else if (score < 70) scoreEl.classList.add('score-average');
+            else scoreEl.classList.add('score-good');
+
+            // Difficulty calculation
+            const difficulty = calculateRankingDifficulty(score, snippet);
+            document.getElementById('difficulty').textContent = difficulty;
+        }
+
+        function calculateRankingDifficulty(score, snippet) {
+            const viewCount = parseInt(snippet.viewCount || 0);
+            
+            if (score < 30 && viewCount < 100) return 'Very Hard';
+            if (score < 50 && viewCount < 1000) return 'Hard';
+            if (score < 70) return 'Medium';
+            return 'Easy';
+        }
+
+        function displayCurrentMetadata(snippet) {
+            document.getElementById('currentTitle').textContent = snippet.title || 'No title';
+            document.getElementById('currentDescription').value = snippet.description || 'No description';
+            
+            const tagsContainer = document.getElementById('currentTags');
+            tagsContainer.innerHTML = '';
+            
+            const tags = snippet.tags || [];
+            tags.forEach(tag => {
+                const tagEl = document.createElement('span');
+                tagEl.className = 'tag';
+                tagEl.textContent = tag;
+                tagsContainer.appendChild(tagEl);
+            });
+            
+            if (tags.length === 0) {
+                tagsContainer.innerHTML = '<span class="tag">No tags</span>';
+            }
+        }
+
+        function generateSearchQuery(snippet) {
+            const title = snippet.title || '';
+            const words = title.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+            return words.slice(0, 4).join(' ') || 'crime documentary';
+        }
+
+        async function searchCompetitors(query, apiKey) {
+            const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&maxResults=5&key=${apiKey}`;
             const response = await fetch(url);
-            if (!response.ok) throw new Error('Search API request failed');
+            if (!response.ok) throw new Error('Search failed');
             
             const data = await response.json();
+            const videoIds = data.items?.map(item => item.id.videoId) || [];
             
-            // Fetch additional details for each video
-            const videoIds = data.items.map(item => item.id.videoId).join(',');
-            const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoIds}&key=${apiKey}`;
+            if (videoIds.length === 0) return [];
             
+            // Fetch full details
+            const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${videoIds.join(',')}&key=${apiKey}`;
             const detailsResponse = await fetch(detailsUrl);
             const detailsData = await detailsResponse.json();
             
             return detailsData.items || [];
         }
 
-        // Display current metadata
-        function displayCurrentMetadata(videoData) {
-            const snippet = videoData.snippet;
-            const stats = videoData.statistics;
-            
-            document.getElementById('currentTitle').textContent = snippet.title;
-            document.getElementById('currentDescription').textContent = 
-                snippet.description || 'No description available';
-            
-            const currentTags = snippet.tags || [];
-            document.getElementById('currentTags').innerHTML = currentTags.length > 0 
-                ? currentTags.join(', ')
-                : 'No tags found';
-        }
-
-        // Display competitors
         function displayCompetitors(competitors) {
-            const container = document.getElementById('competitorList');
+            const container = document.getElementById('competitorContainer');
             container.innerHTML = '';
             
             competitors.forEach((video, index) => {
-                const snippet = video.snippet;
+                const snippet = video.snippet || {};
                 const stats = video.statistics || {};
                 
                 const competitorEl = document.createElement('div');
@@ -770,328 +845,223 @@
                 competitorEl.innerHTML = `
                     <div class="competitor-title">${index + 1}. ${snippet.title}</div>
                     <div class="competitor-stats">
-                        <div class="stat">👁️ ${formatNumber(stats.viewCount || 0)} views</div>
-                        <div class="stat">👍 ${formatNumber(stats.likeCount || 0)} likes</div>
-                        <div class="stat">💬 ${formatNumber(stats.commentCount || 0)} comments</div>
-                        <div class="stat">📅 ${new Date(snippet.publishedAt).toLocaleDateString()}</div>
+                        <div>👁 ${formatNumber(stats.viewCount || 0)}</div>
+                        <div>👍 ${formatNumber(stats.likeCount || 0)}</div>
+                        <div>💬 ${formatNumber(stats.commentCount || 0)}</div>
                     </div>
                 `;
                 container.appendChild(competitorEl);
             });
         }
 
-        // Generate optimized metadata
-        function generateOptimizedMetadata(videoData, competitors) {
-            const currentTitle = videoData.snippet.title;
-            const currentDesc = videoData.snippet.description || '';
-            const currentTags = videoData.snippet.tags || [];
+        // Keyword Gap Analysis
+        function performKeywordGapAnalysis(currentSnippet, competitors) {
+            const currentTags = new Set(currentSnippet.tags || []);
+            const currentWords = extractWords(currentSnippet.title + ' ' + currentSnippet.description);
             
-            // Extract competitor keywords
-            const competitorKeywords = extractCompetitorKeywords(competitors);
+            const competitorKeywords = new Map();
             
-            // Generate optimized title
-            const optimizedTitle = generateOptimizedTitle(currentTitle, competitorKeywords);
-            
-            // Generate optimized description
-            const optimizedDescription = generateOptimizedDescription(currentDesc, competitorKeywords, videoData);
-            
-            // Generate optimized tags
-            const optimizedTags = generateOptimizedTags(currentTags, competitorKeywords, videoData);
-            
-            return {
-                title: optimizedTitle,
-                description: optimizedDescription,
-                tags: optimizedTags,
-                keywords: competitorKeywords
-            };
-        }
-
-        // Extract keywords from competitor videos
-        function extractCompetitorKeywords(competitors) {
-            const keywordFreq = {};
-            const allWords = [];
-            
+            // Extract all competitor keywords with frequency
             competitors.forEach(video => {
-                const title = video.snippet.title.toLowerCase();
-                const desc = (video.snippet.description || '').toLowerCase();
-                const tags = video.snippet.tags || [];
+                const snippet = video.snippet || {};
+                const keywords = [
+                    ...(snippet.tags || []),
+                    ...extractWords(snippet.title),
+                    ...extractWords(snippet.description || '')
+                ];
                 
-                // Extract words from title
-                const titleWords = title.match(/\b\w{4,}\b/g) || [];
-                // Extract words from description
-                const descWords = desc.match(/\b\w{4,}\b/g) || [];
-                // Combine all
-                const allVideoWords = [...titleWords, ...descWords, ...tags.map(t => t.toLowerCase())];
-                
-                allVideoWords.forEach(word => {
-                    if (!['https', 'http', 'www', 'youtube', 'com'].includes(word)) {
-                        keywordFreq[word] = (keywordFreq[word] || 0) + 1;
+                keywords.forEach(keyword => {
+                    if (keyword.length > 3 && !isCommonWord(keyword)) {
+                        competitorKeywords.set(keyword, (competitorKeywords.get(keyword) || 0) + 1);
                     }
                 });
             });
-            
-            // Sort by frequency and return top keywords
-            return Object.entries(keywordFreq)
-                .sort((a, b) => b[1] - a[1])
-                .slice(0, 15)
-                .map(item => item[0]);
+
+            // Find gaps
+            const gaps = [];
+            competitorKeywords.forEach((count, keyword) => {
+                if (!currentTags.has(keyword) && !currentWords.has(keyword)) {
+                    // Calculate opportunity score
+                    const searchVolume = Math.min(count * 100, 1000); // Approximate
+                    const competition = competitors.length;
+                    const opportunity = searchVolume / (competition + 1);
+                    
+                    gaps.push({
+                        keyword,
+                        count,
+                        opportunity: Math.round(opportunity),
+                        reason: getGapReason(keyword, count)
+                    });
+                }
+            });
+
+            // Sort by opportunity
+            return gaps.sort((a, b) => b.opportunity - a.opportunity).slice(0, 10);
         }
 
-        // Generate optimized title
-        function generateOptimizedTitle(currentTitle, keywords) {
-            const titlePatterns = [
-                `{keyword} - Shocking Truth Revealed`,
-                `{keyword} Case: What Really Happened?`,
-                `{keyword} Mystery Solved - Full Documentary`,
-                `{keyword} Crime Story - Hindi Documentary`,
-                `{keyword} - Real Story Behind The Case`,
-                `{keyword} Investigation - Unseen Evidence`,
-                `{keyword} Documentary - Rahasya911 Exclusive`
+        function extractWords(text) {
+            return new Set(text.toLowerCase().match(/\b\w{4,}\b/g) || []);
+        }
+
+        function isCommonWord(word) {
+            const common = new Set(['https', 'http', 'www', 'youtube', 'com', 'the', 'this', 'that', 'with', 'from', 'they', 'have', 'will', ' crime', 'case']);
+            return common.has(word.toLowerCase());
+        }
+
+        function getGapReason(keyword, count) {
+            if (count >= 3) return 'Used by multiple top videos';
+            if (keyword.includes('hindi') || keyword.includes('indian')) return 'Regional opportunity';
+            if (keyword.includes('documentary') || keyword.includes('story')) return 'Content type gap';
+            return 'Low competition keyword';
+        }
+
+        function displayKeywordGaps(gaps) {
+            const container = document.getElementById('gapContainer');
+            container.innerHTML = '';
+            
+            if (gaps.length === 0) {
+                container.innerHTML = '<p style="color: var(--text-secondary);">No keyword gaps found</p>';
+                return;
+            }
+
+            gaps.forEach(gap => {
+                const gapEl = document.createElement('div');
+                gapEl.className = 'gap-item';
+                gapEl.innerHTML = `
+                    <div class="gap-keyword">${gap.keyword}</div>
+                    <div class="gap-reason">${gap.reason} • Opportunity: ${gap.opportunity}</div>
+                `;
+                container.appendChild(gapEl);
+            });
+        }
+
+        // Generate Optimized Metadata
+        function generateOptimizedMetadata(currentSnippet, competitors, gaps) {
+            // Title generation
+            const topGapKeyword = gaps[0]?.keyword || '';
+            const optimizedTitle = generateOptimizedTitle(currentSnippet.title, topGapKeyword);
+            document.getElementById('optimizedTitle').value = optimizedTitle;
+
+            // Description generation
+            const optimizedDescription = generateOptimizedDescription(currentSnippet, gaps);
+            document.getElementById('optimizedDescription').value = optimizedDescription;
+
+            // Tags generation (prioritize gap keywords)
+            const optimizedTags = generateOptimizedTags(currentSnippet.tags || [], gaps, competitors);
+            displayOptimizedTags(optimizedTags);
+        }
+
+        function generateOptimizedTitle(currentTitle, gapKeyword) {
+            const patterns = [
+                `${gapKeyword} - Complete Documentary`,
+                `${gapKeyword} Mystery - Hindi Crime Story`,
+                `${gapKeyword} Case: Real Story Revealed`,
+                `Rahasya911: ${gapKeyword} Investigation`,
+                `${gapKeyword} Crime Documentary [Hindi]`
             ];
             
-            // Use most frequent keyword
-            const mainKeyword = keywords[0] || 'Crime';
-            
-            // Select pattern based on current title style
-            let pattern;
-            if (currentTitle.includes('?')) {
-                pattern = `{keyword} Case: What Really Happened?`;
-            } else if (currentTitle.includes('Documentary')) {
-                pattern = `{keyword} Documentary - Rahasya911 Exclusive`;
-            } else {
-                pattern = titlePatterns[Math.floor(Math.random() * titlePatterns.length)];
+            // If we have a good gap keyword, use it
+            if (gapKeyword && Math.random() > 0.3) {
+                return patterns[Math.floor(Math.random() * patterns.length)];
             }
             
-            const optimized = pattern.replace('{keyword}', mainKeyword.charAt(0).toUpperCase() + mainKeyword.slice(1));
+            // Improve existing title
+            let newTitle = currentTitle;
+            if (currentTitle.length < 40) {
+                newTitle += ' - Hindi Crime Documentary';
+            }
+            if (!currentTitle.includes('|') && !currentTitle.includes('-')) {
+                newTitle = currentTitle.replace(/(Case|Story|Mystery)/i, '$1 -');
+            }
             
-            // Ensure it's not too long (YouTube limit: 100 chars)
-            return optimized.length > 100 ? optimized.substring(0, 97) + '...' : optimized;
+            // Ensure optimal length
+            return newTitle.substring(0, 80);
         }
 
-        // Generate optimized description
-        function generateOptimizedDescription(currentDesc, keywords, videoData) {
-            const stats = videoData.statistics || {};
-            const snippet = videoData.snippet;
-            
+        function generateOptimizedDescription(snippet, gaps) {
             const parts = [
-                // Hook
-                `🔍 ${keywords[0] ? keywords[0].charAt(0).toUpperCase() + keywords[0].slice(1) : 'This'} case shocked the nation. In this documentary, we reveal the untold story behind one of India's most mysterious crimes.`,
-                
-                // Content preview
-                `📺 What you'll discover:\n✅ The real story behind the headlines\n✅ Exclusive evidence and investigation details\n✅ Expert analysis and theories\n✅ Impact on society and justice system`,
-                
-                // Channel branding
-                `🎙️ Brought to you by Rahasya911 - Your #1 destination for real crime documentaries in Hindi. We investigate the darkest mysteries and bring you the truth.`,
-                
-                // SEO keywords
-                `🎯 Related: ${keywords.slice(0, 8).join(', ')}, Indian crime documentary, Hindi mystery, Rahasya911, real case, police investigation, courtroom drama`,
-                
-                // Call to action
-                `👍 If you find this case fascinating, please LIKE and SHARE. Subscribe to Rahasya911 for more shocking true crime documentaries!\n\n🔔 Turn on notifications to never miss an update.`,
-                
-                // Timestamps (placeholder)
-                `⏰ Timestamps:\n0:00 Introduction\n2:30 Background\n5:45 The Crime\n10:20 Investigation\n15:30 Verdict\n18:00 Aftermath`,
-                
-                // Disclaimer
-                `⚖️ Disclaimer: This documentary is for educational and informational purposes. All information is based on public records and media reports.`
+                `🔍 ${snippet.title}\n\nThis documentary reveals the shocking truth behind one of India's most mysterious cases.`,
+                `📺 IN THIS VIDEO:\n✓ Real investigation footage\n✓ Exclusive interviews\n✓ Evidence analysis\n✓ Final verdict\n✓ Impact on society`,
+                `🎯 KEYWORDS: ${gaps.slice(0, 5).map(g => g.keyword).join(', ')}, Indian crime, Hindi documentary`,
+                `🚨 Subscribe to Rahasya911 for more true crime documentaries every week!`,
+                `⏰ TIMESTAMPS:\n0:00 Introduction\n2:30 Background\n5:45 The Crime\n10:20 Investigation\n15:30 Aftermath`,
+                `⚖️ DISCLAIMER: This video is for educational purposes based on public records.`
             ];
             
             return parts.join('\n\n');
         }
 
-        // Generate optimized tags
-        function generateOptimizedTags(currentTags, keywords, videoData) {
-            const snippet = videoData.snippet;
-            const titleWords = snippet.title.toLowerCase().match(/\b\w{4,}\b/g) || [];
+        function generateOptimizedTags(currentTags, gaps, competitors) {
+            const priorityTags = gaps.slice(0, 8).map(g => g.keyword);
+            const competitorTags = new Set();
             
-            const tagCategories = {
-                primary: keywords.slice(0, 3),
-                secondary: keywords.slice(3, 8),
-                longtail: [
-                    ...titleWords.filter(w => w.length > 5).slice(0, 3),
-                    'Rahasya911',
-                    'Indian crime documentary',
-                    'Hindi documentary',
-                    'real crime story',
-                    'mystery solved',
-                    'police investigation',
-                    'court case',
-                    'true crime',
-                    'documentary hindi',
-                    'crime patrol',
-                    'saavdhan india'
-                ],
-                trending: [
-                    'viral',
-                    'trending',
-                    'breaking news',
-                    'exclusive',
-                    'shocking',
-                    'unbelievable',
-                    'mystery',
-                    'thriller'
-                ]
-            };
-            
-            // Combine all tags and remove duplicates
-            const allTags = [...new Set([
-                ...tagCategories.primary,
-                ...tagCategories.secondary,
-                ...tagCategories.longtail,
-                ...tagCategories.trending,
-                ...currentTags.filter(tag => tag.length > 3)
-            ])];
-            
-            // YouTube allows max 500 characters total
-            let charCount = 0;
-            return allTags.filter(tag => {
-                if (charCount + tag.length + 1 <= 480) { // Leave some buffer
-                    charCount += tag.length + 1;
-                    return true;
-                }
-                return false;
-            }).slice(0, 35); // Max 35 tags
+            // Extract competitor tags
+            competitors.forEach(video => {
+                const tags = video.snippet?.tags || [];
+                tags.forEach(tag => {
+                    if (tag.length > 3 && tag.length < 30) {
+                        competitorTags.add(tag);
+                    }
+                });
+            });
+
+            const channelTags = ['Rahasya911', 'Hindi crime documentary', 'Indian true crime', 'mystery solved', 'police investigation'];
+            const trendingTags = ['viral', 'shocking', 'unbelievable', 'breaking news'];
+
+            // Combine all with priority order
+            const allTags = new Set([
+                ...priorityTags,
+                ...currentTags,
+                ...Array.from(competitorTags).slice(0, 10),
+                ...channelTags,
+                ...trendingTags
+            ]);
+
+            return Array.from(allTags).slice(0, 35); // Max 35 tags
         }
 
-        // Display optimized metadata
-        function displayOptimizedMetadata(optimized) {
-            document.getElementById('optimizedTitle').textContent = optimized.title;
-            document.getElementById('optimizedDescription').textContent = optimized.description;
+        function displayOptimizedTags(tags) {
+            const container = document.getElementById('optimizedTags');
+            container.innerHTML = '';
             
-            // Display tags
-            const tagsContainer = document.getElementById('optimizedTags');
-            tagsContainer.innerHTML = '';
-            optimized.tags.forEach(tag => {
+            tags.forEach((tag, index) => {
                 const tagEl = document.createElement('span');
-                tagEl.className = 'tag';
+                tagEl.className = index < 5 ? 'tag tag-opportunity' : 'tag';
                 tagEl.textContent = tag;
-                tagsContainer.appendChild(tagEl);
+                container.appendChild(tagEl);
             });
-            
-            // Display competitor keywords
-            const keywordsContainer = document.getElementById('competitorKeywords');
-            keywordsContainer.innerHTML = '';
-            optimized.keywords.slice(0, 10).forEach(keyword => {
-                const tagEl = document.createElement('span');
-                tagEl.className = 'tag';
-                tagEl.style.background = 'linear-gradient(135deg, #f59e0b, #d97706)';
-                tagEl.textContent = keyword;
-                keywordsContainer.appendChild(tagEl);
-            });
-            
-            // Display tips
-            displayTips(optimized);
         }
 
-        // Display optimization tips
-        function displayTips(optimized) {
-            const tipsContainer = document.getElementById('tipsList');
-            const tips = [
-                `Update your title within 24 hours for best results - "${optimized.title}"`,
-                `Copy the full description with timestamps to improve watch time`,
-                `Use all ${optimized.tags.length} tags - YouTube allows up to 500 characters`,
-                `Add the top 5 competitor keywords to your video file name before uploading`,
-                `Create a custom thumbnail with the main keyword: "${optimized.keywords[0]}"`,
-                `Pin a comment with your main keyword within first hour of upload`,
-                `Share on social media using optimized hashtags`
-            ];
-            
-            tipsContainer.innerHTML = tips.map(tip => 
-                `<div class="tip-item">${tip}</div>`
-            ).join('');
-        }
-
-        // Calculate SEO score
-        function calculateSEOScore(videoData, optimized, competitors) {
-            let score = 50; // Base score
-            
-            // Title optimization (0-20 points)
-            const titleLength = optimized.title.length;
-            if (titleLength >= 50 && titleLength <= 80) score += 15;
-            else if (titleLength >= 40 && titleLength <= 90) score += 10;
-            
-            // Description optimization (0-15 points)
-            const descLength = optimized.description.length;
-            if (descLength >= 1000) score += 15;
-            else if (descLength >= 500) score += 10;
-            else if (descLength >= 250) score += 5;
-            
-            // Tags optimization (0-10 points)
-            if (optimized.tags.length >= 20) score += 10;
-            else if (optimized.tags.length >= 15) score += 7;
-            else if (optimized.tags.length >= 10) score += 5;
-            
-            // Competitor analysis bonus (0-5 points)
-            if (competitors.length >= 3) score += 5;
-            
-            // Ensure score is between 0-100
-            score = Math.min(100, Math.max(0, score));
-            
-            // Update UI
-            document.getElementById('scoreText').textContent = score;
-            
-            const scoreBar = document.getElementById('scoreBarFill');
-            scoreBar.style.width = score + '%';
-            
-            // Update score circle
-            const circle = document.getElementById('scoreCircle');
-            const color = score >= 80 ? '#10b981' : score >= 60 ? '#f59e0b' : '#ef4444';
-            circle.style.background = `conic-gradient(${color} 0deg, ${color} ${score * 3.6}deg, #334155 ${score * 3.6}deg)`;
-            
-            // Update description
-            let description = '';
-            if (score >= 80) {
-                description = '🟢 Excellent! Your video has high ranking potential. Implement these changes to reach #1 spot!';
-            } else if (score >= 60) {
-                description = '🟡 Good optimization! With these changes, you should see significant ranking improvements.';
-            } else {
-                description = '🔴 Major improvements needed. Implement ALL suggestions to compete effectively.';
-            }
-            
-            document.getElementById('scoreDescription').textContent = description;
-        }
-
-        // Utility functions
+        // Utilities
         function formatNumber(num) {
-            if (num >= 1000000) {
-                return (num / 1000000).toFixed(1) + 'M';
-            } else if (num >= 1000) {
-                return (num / 1000).toFixed(1) + 'K';
-            }
-            return num.toString();
+            const n = parseInt(num || 0);
+            if (n >= 1000000) return `${(n / 1000000).toFixed(1)}M`;
+            if (n >= 1000) return `${(n / 1000).toFixed(1)}K`;
+            return n.toString();
         }
 
-        // Copy to clipboard
         async function copyToClipboard(elementId) {
             const element = document.getElementById(elementId);
-            let text = '';
-            
-            if (elementId === 'optimizedTags') {
-                // For tags, join them with commas
-                text = Array.from(element.children).map(tag => tag.textContent).join(', ');
-            } else {
-                text = element.textContent;
-            }
-            
             try {
-                await navigator.clipboard.writeText(text);
-                showMessage('Copied to clipboard!', 'success');
-            } catch (err) {
-                // Fallback for older browsers
-                const textArea = document.createElement('textarea');
-                textArea.value = text;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                showMessage('Copied to clipboard!', 'success');
+                await navigator.clipboard.writeText(element.value);
+                showMessage('Copied', 'success');
+            } catch (e) {
+                showMessage('Copy failed', 'error');
             }
         }
 
-        // Prevent API key from being cleared on refresh
-        window.addEventListener('beforeunload', function() {
-            loadApiKey();
-        });
+        async function copyTags() {
+            const tags = Array.from(document.getElementById('optimizedTags').children)
+                .map(tag => tag.textContent)
+                .join(', ');
+            
+            try {
+                await navigator.clipboard.writeText(tags);
+                showMessage('Tags copied', 'success');
+            } catch (e) {
+                showMessage('Copy failed', 'error');
+            }
+        }
     </script>
 </body>
 </html>
